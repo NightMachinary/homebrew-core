@@ -238,6 +238,8 @@ class Php < Formula
   end
 
   def post_install
+    mkdir_p shell_output("#{bin}/pecl config-get ext_dir")
+      
     pear_prefix = pkgshare/"pear"
     pear_files = %W[
       #{pear_prefix}/.depdblock
